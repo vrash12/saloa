@@ -1,0 +1,17 @@
+:root {
+  --forest: #071a17;
+  --forest-secondary: #0b2420;
+  --teal: #14b8a6;
+  --teal-light: #2dd4bf;
+  --mint: #ccfbf1;
+  --background: #f7faf9;
+  --surface-sage: #e5ede8;
+  --white: #fff;
+  --text: #10211e;
+  --muted: #53645f;
+  --border: #10211e1a;
+  --container: 1280px;
+  --radius: 12px;
+  --space-section: 112px;
+  --transition: 250ms ease;
+}

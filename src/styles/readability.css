@@ -1,0 +1,676 @@
+/* Readable product copy, distinct from intentionally miniature concept interfaces. */
+.service-details-content > .small-label,
+.dashboard-breadcrumb,
+.dashboard-content > p:not(.dashboard-breadcrumb),
+.concept-note,
+.example-hero > p,
+.ai-caption,
+.process-note > p,
+.industries-heading .eyebrow,
+.contact-copy > p:not(.eyebrow) {
+  color: #536b5d;
+}
+.feature-copy > .ai-footnote {
+  color: #536b5d !important;
+}
+.preview-notice {
+  color: #4d6652;
+}
+.status-message {
+  color: #67602f;
+}
+.hero-description,
+.section-intro,
+.feature-copy > p:not(.eyebrow),
+.service-card > p,
+.automation-heading > p:last-child,
+.final-cta-copy > p,
+.contact-copy > p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.85;
+}
+.service-card > p {
+  min-height: 118px;
+}
+.service-software > p,
+.service-automation > p {
+  min-height: 88px;
+}
+.service-cloud > p {
+  min-height: 0;
+}
+.service-tags li {
+  font-size: 11px;
+}
+.service-details summary {
+  font-size: 13px;
+}
+.service-details-content li {
+  font-size: 14px;
+}
+.services-footnote p,
+.check-list li,
+.why-reasons p,
+.process-timeline p,
+.solution-detail > p,
+.contact-expectations p {
+  font-size: 14px;
+  color: #536b5d;
+}
+.process-timeline h3 {
+  font-size: 17px;
+  min-height: 45px;
+}
+.solution-options > button {
+  font-size: 13px;
+  min-height: 65px;
+}
+.solution-detail > .text-link,
+.feature-copy .text-link {
+  font-size: 13px;
+}
+.desktop-nav a {
+  font-size: 13px;
+}
+.hero-capabilities,
+.hero-bottom,
+.capability-strip span {
+  font-size: 11px;
+}
+.workflow-row li span,
+.workflow-controls p {
+  font-size: 12px;
+}
+.workflow-row.before li span,
+.workflow-row.before li > div {
+  color: #a7baad;
+}
+.workflow-label > .small-label {
+  color: #92b3a0;
+}
+.demo-label {
+  color: #9abba6;
+}
+.workflow-controls .button {
+  font-size: 12px;
+}
+.technology-grid h3,
+.technology-grid span,
+.industries-grid > div,
+.website-benefits > span {
+  font-size: 12px;
+}
+.why-reasons h3 {
+  font-size: 19px;
+}
+.ai-options > button {
+  font-size: 14px;
+}
+.ai-footnote {
+  color: #536b5d !important;
+}
+.field label {
+  font-size: 13px;
+}
+.field label > small {
+  font-size: 11px;
+  color: #617562;
+}
+.field input,
+.field select,
+.field textarea {
+  font-size: 16px;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  font-size: 13px;
+  color: #687d65;
+}
+.field-hint,
+.form-actions > p {
+  font-size: 11px;
+  color: #65785f;
+}
+.form-intro > span {
+  font-size: 11px;
+  color: #64775f;
+}
+.form-actions > p {
+  max-width: 230px;
+}
+.contact-side-note p {
+  font-size: 12px;
+  color: #617561;
+}
+.footer-column > a {
+  font-size: 12px;
+  min-height: 29px;
+}
+.footer-column h2 {
+  font-size: 11px;
+  color: #a0baa9;
+}
+.footer-pending {
+  font-size: 11px;
+  color: #91ae9b;
+}
+.footer-bottom {
+  font-size: 11px;
+  color: #91ae9b;
+}
+.footer-bottom > div small {
+  font-size: 10px;
+  color: #8ca997;
+}
+.text-link {
+  min-height: 44px;
+}
+.dashboard-sidebar nav button {
+  min-height: 36px;
+}
+@media (max-width: 1150px) {
+  .service-card > p {
+    min-height: 147px;
+  }
+  .service-software > p,
+  .service-automation > p {
+    min-height: 90px;
+  }
+  .service-cloud > p {
+    min-height: 0;
+  }
+  .process-timeline h3 {
+    font-size: 15px;
+    min-height: 43px;
+  }
+  .process-timeline p {
+    font-size: 13px;
+  }
+  .service-tags li {
+    font-size: 10px;
+  }
+  .footer-main {
+    gap: 26px;
+  }
+  .footer-bottom {
+    font-size: 10px;
+  }
+}
+@media (max-width: 1023px) {
+  .service-card > p {
+    font-size: 14px;
+    min-height: 156px;
+  }
+  .service-software > p,
+  .service-automation > p {
+    font-size: 15px;
+    min-height: 109px;
+  }
+  .service-cloud > p {
+    min-height: 0;
+  }
+  .feature-split,
+  .feature-split.reverse {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .feature-copy > p:not(.eyebrow) {
+    max-width: 620px;
+  }
+  .feature-copy h2 {
+    font-size: 40px;
+  }
+  .dashboard-frame,
+  .website-visual,
+  .ai-demo {
+    width: 100%;
+    max-width: 650px;
+    margin-inline: auto;
+  }
+  .dashboard-sidebar {
+    width: 132px;
+    padding: 20px 10px;
+  }
+  .workspace-label {
+    justify-content: flex-start;
+  }
+  .workspace-label > strong,
+  .dashboard-sidebar nav button > span {
+    display: block;
+  }
+  .dashboard-sidebar nav button {
+    justify-content: flex-start;
+    font-size: 10px;
+    gap: 8px;
+    min-height: 44px;
+  }
+  .workspace-label > strong {
+    font-size: 11px;
+  }
+  .dashboard-content {
+    padding: 22px;
+  }
+  .dashboard-content h3 {
+    font-size: 20px;
+  }
+  .dashboard-statuses strong {
+    font-size: 12px;
+  }
+  .dashboard-statuses small,
+  .request-row {
+    font-size: 10px;
+  }
+  .dashboard {
+    min-height: 418px;
+  }
+  .feature-split.reverse > .feature-copy {
+    grid-row: 1;
+  }
+  .website-visual {
+    max-width: 600px;
+  }
+  .example-hero {
+    min-height: 290px;
+  }
+  .example-hero > h3 {
+    font-size: 36px;
+  }
+  .example-hero > span {
+    font-size: 10px;
+  }
+  .example-hero > p {
+    font-size: 8px;
+  }
+  .example-nav > div {
+    font-size: 8px;
+    gap: 17px;
+  }
+  .example-nav > span {
+    font-size: 10px;
+  }
+  .website-geometry {
+    right: -25px;
+    top: 25px;
+    opacity: 1;
+  }
+  .phone-mockup {
+    transform: rotate(4deg) scale(1);
+    right: 0;
+  }
+  .ai-conversation {
+    min-height: 290px;
+  }
+  .ai-question,
+  .ai-response {
+    font-size: 14px;
+  }
+  .ai-source {
+    font-size: 10px;
+  }
+  .ai-caption {
+    font-size: 11px;
+  }
+  .ai-input {
+    font-size: 12px;
+  }
+  .ai-demo-footer {
+    font-size: 9px;
+  }
+  .process-timeline h3 {
+    font-size: 18px;
+    min-height: 0;
+  }
+  .process-timeline p {
+    font-size: 14px;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .contact-copy {
+    max-width: 600px;
+  }
+  .contact-copy > p:not(.eyebrow) {
+    max-width: 100%;
+  }
+  .contact-side-note {
+    display: none;
+  }
+  .contact-expectations {
+    max-width: 100%;
+  }
+  .contact-copy h2 {
+    font-size: 40px;
+  }
+  .form-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+  .form-actions > p {
+    text-align: left;
+    max-width: 250px;
+  }
+  .footer-bottom {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+  .footer-bottom > div {
+    margin: 0;
+  }
+  .footer-bottom > div small {
+    font-size: 9px;
+  }
+}
+@media (max-width: 767px) {
+  .service-card > p,
+  .service-software > p,
+  .service-automation > p {
+    min-height: 0;
+    font-size: 16px;
+  }
+  .hero-description,
+  .section-intro,
+  .feature-copy > p:not(.eyebrow),
+  .automation-heading > p:last-child,
+  .contact-copy > p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  .service-tags li {
+    font-size: 11px;
+  }
+  .feature-copy h2,
+  .contact-copy h2 {
+    font-size: 36px;
+  }
+  .services-footnote p,
+  .check-list li,
+  .why-reasons p,
+  .process-timeline p,
+  .solution-detail > p,
+  .contact-expectations p {
+    font-size: 14px;
+  }
+  .process-timeline h3 {
+    font-size: 19px;
+  }
+  .capability-strip span {
+    font-size: 8px;
+  }
+  .hero-capabilities {
+    font-size: 10px;
+  }
+  .hero-bottom {
+    font-size: 10px;
+  }
+  .workflow-row li span {
+    font-size: 11px;
+  }
+  .solution-options > button {
+    font-size: 12px;
+    min-height: 78px;
+  }
+  .solution-detail > .text-link {
+    font-size: 13px;
+  }
+  .dashboard-sidebar {
+    width: 43px;
+    padding: 16px 5px;
+  }
+  .workspace-label > strong,
+  .dashboard-sidebar nav button > span {
+    display: none;
+  }
+  .dashboard-sidebar nav button {
+    justify-content: center;
+    padding: 9px 6px;
+    min-height: 44px;
+  }
+  .workspace-label {
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  .dashboard-content {
+    padding: 18px 12px;
+  }
+  .dashboard-content h3 {
+    font-size: 15px;
+  }
+  .dashboard-statuses strong {
+    font-size: 9px;
+  }
+  .dashboard-statuses small,
+  .request-row {
+    font-size: 8px;
+  }
+  .dashboard {
+    min-height: 380px;
+  }
+  .example-hero {
+    min-height: 255px;
+  }
+  .example-hero > h3 {
+    font-size: 28px;
+  }
+  .example-hero > span {
+    font-size: 8px;
+  }
+  .example-hero > p {
+    font-size: 6px;
+  }
+  .example-nav > span {
+    font-size: 7px;
+  }
+  .example-nav > div {
+    font-size: 5px;
+    gap: 8px;
+  }
+  .website-geometry {
+    right: -95px;
+    opacity: 0.7;
+  }
+  .phone-mockup {
+    transform: rotate(4deg) scale(0.86);
+  }
+  .ai-question,
+  .ai-response {
+    font-size: 13px;
+  }
+  .ai-source {
+    font-size: 9px;
+  }
+  .ai-demo-footer {
+    font-size: 8px;
+  }
+  .form-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 15px;
+  }
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .form-actions > p {
+    text-align: center;
+    max-width: 100%;
+    font-size: 11px;
+  }
+  .field label {
+    font-size: 12px;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder {
+    font-size: 12px;
+  }
+  .footer-main {
+    gap: 32px 20px;
+  }
+  .footer-column > a {
+    font-size: 12px;
+    min-height: 38px;
+  }
+  .footer-column:last-child {
+    margin-top: -20px;
+  }
+  .footer-bottom {
+    font-size: 10px;
+  }
+  .footer-bottom > div {
+    font-size: 9px;
+  }
+  .footer-bottom > div small {
+    font-size: 8px;
+  }
+}
+@media (max-width: 374px) {
+  .hero h1 {
+    font-size: 39px;
+  }
+  .feature-copy h2,
+  .contact-copy h2 {
+    font-size: 31px;
+  }
+  .hero-capabilities {
+    font-size: 9px;
+  }
+  .solution-options > button {
+    font-size: 11px;
+  }
+  .dashboard-sidebar {
+    width: 36px;
+    padding-inline: 3px;
+  }
+  .dashboard-content {
+    padding: 15px 9px;
+  }
+  .dashboard-content h3 {
+    font-size: 13px;
+  }
+  .dashboard-statuses strong {
+    font-size: 8px;
+  }
+  .dashboard-statuses small,
+  .request-row {
+    font-size: 7px;
+  }
+  .phone-mockup {
+    transform: rotate(4deg) scale(0.73);
+  }
+  .example-hero > h3 {
+    font-size: 23px;
+  }
+  .example-hero > span {
+    font-size: 7px;
+  }
+  .website-geometry {
+    right: -120px;
+  }
+  .ai-source {
+    font-size: 8px;
+  }
+  .ai-demo-footer {
+    font-size: 7px;
+  }
+  .footer-column > a {
+    font-size: 11px;
+  }
+  .footer-column:last-child {
+    margin-top: -10px;
+  }
+  .footer-bottom > div {
+    font-size: 8px;
+  }
+  .hero .eyebrow {
+    font-size: 8px;
+  }
+  .workflow-row li span {
+    font-size: 10px;
+  }
+}
+
+/* Keep ecosystem labels clear of the central node on the narrowest screens. */
+@media (max-width: 374px) {
+  .node-system {
+    top: 25%;
+  }
+  .node-automation {
+    top: 27%;
+  }
+  .ecosystem-core {
+    top: 40%;
+    left: 33%;
+    width: 35%;
+  }
+  .node-cloud {
+    bottom: 17%;
+  }
+  .node-ai {
+    bottom: 14%;
+  }
+}
+@media (max-width: 767px) {
+  .dashboard-sidebar {
+    width: 48px;
+    padding-inline: 2px;
+  }
+  .dashboard-sidebar nav button {
+    min-width: 44px;
+  }
+}
+
+/* Preserve the official artwork's proportions and transparent background. */
+.logo-artwork {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 5;
+  overflow: hidden;
+  background: transparent;
+}
+.logo-artwork img {
+  position: absolute;
+  top: -22.857143%;
+  left: -7.460317%;
+  display: block;
+  width: 114.920635%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  /* Hide the bottom tagline while retaining the full saola silhouette. */
+  clip-path: polygon(0 0, 100% 0, 100% 71.5%, 40% 71.5%, 40% 100%, 0 100%);
+}
+/* A reversed treatment keeps the same artwork legible on forest surfaces. */
+.navbar .logo-artwork img,
+.ecosystem-core-branded .logo-artwork img,
+.footer .logo-artwork img {
+  filter: brightness(0) invert(1);
+}
+.navbar.is-scrolled .brand {
+  width: 115.2px;
+  height: 64px;
+}
+.footer .brand {
+  width: 216px;
+  height: 120px;
+}
+.ecosystem-core-branded {
+  justify-content: center;
+  padding: 10px;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+@media (max-width: 767px) {
+  .navbar .brand {
+    width: 115.2px;
+    height: 64px;
+  }
+  .footer .brand {
+    width: 194.4px;
+    height: 108px;
+  }
+  .ecosystem-core-branded {
+    padding: 5px;
+  }
+}
