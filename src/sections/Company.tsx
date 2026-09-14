@@ -19,6 +19,7 @@ import {
   Globe2,
 } from "lucide-react";
 import { SectionHeader } from "../components/UI";
+import { SaolaMark } from "../components/SaolaPresence";
 import { process, technologies, solutions } from "../data/company";
 import type { Solution } from "../data/company";
 
@@ -257,6 +258,7 @@ export function About() {
     <section className="section about-section" id="about">
       <div className="container about-layout">
         <div className="about-visual" aria-hidden="true">
+          <div className="saola-watermark about-saola" data-saola-reveal><SaolaMark /></div>
           <div className="about-visual-top">
             <Braces size={18} />
             <span>PURPOSE → PROCESS → PRODUCT</span>

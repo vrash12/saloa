@@ -1,0 +1,185 @@
+/* Crop the original PNG's symbol: x45–225, y72–332, at its native proportions. */
+.saola-mark {
+  position: relative;
+  display: block;
+  width: 36px;
+  aspect-ratio: 9 / 13;
+  overflow: hidden;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.saola-mark img {
+  position: absolute;
+  display: block;
+  width: 320.555556%;
+  max-width: none;
+  height: auto;
+  left: -25%;
+  top: -27.692308%;
+}
+.saola-companion {
+  display: none;
+  position: fixed;
+  right: 12px;
+  top: calc(50% - 100px);
+  width: 44px;
+  height: 200px;
+  z-index: 30;
+  pointer-events: none;
+}
+.saola-companion[hidden] {
+  display: none;
+}
+.saola-trail {
+  position: absolute;
+  top: 28px;
+  left: 21px;
+  width: 2px;
+  height: 144px;
+  background: #729f9026;
+  overflow: hidden;
+}
+.saola-trail > span {
+  display: block;
+  height: 100%;
+  background: #249985;
+  transform-origin: top;
+  transform: scaleY(var(--saola-progress, 0));
+}
+.saola-guide {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 44px;
+  height: 56px;
+  padding: 6px;
+  border: 1px solid #558f7c;
+  border-radius: 24px;
+  background: var(--forest-secondary);
+  box-shadow: 0 4px 14px #071a1714;
+  color: var(--mint);
+  pointer-events: auto;
+  transform: translate3d(0, var(--saola-position, 0px), 0);
+}
+.saola-guide .saola-mark {
+  width: 25px;
+  transition: transform 220ms ease;
+}
+.saola-guide .saola-mark img {
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
+.saola-guide:hover .saola-mark,
+.saola-guide:focus-visible .saola-mark {
+  transform: translateY(-2px);
+}
+.saola-guide:focus-visible {
+  outline-color: var(--teal);
+  outline-offset: 4px;
+}
+.saola-guide-label {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background: var(--forest-secondary);
+  color: #e1f4eb;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 160ms ease;
+}
+.saola-guide:hover .saola-guide-label,
+.saola-guide:focus-visible .saola-guide-label {
+  opacity: 1;
+  visibility: visible;
+}
+.saola-watermark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+.saola-watermark .saola-mark {
+  width: 100%;
+}
+.saola-watermark img {
+  filter: brightness(0) invert(1);
+}
+.about-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.about-saola {
+  right: -18px;
+  bottom: 26px;
+  width: 178px;
+  opacity: 0.09;
+  z-index: -1;
+}
+.final-cta {
+  isolation: isolate;
+}
+.closing-saola {
+  right: 36%;
+  bottom: -38px;
+  width: 170px;
+  opacity: 0.065;
+  z-index: -1;
+}
+.saola-arrived {
+  animation: saola-arrival 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.ecosystem-core-branded .logo-artwork {
+  animation: saola-hero-arrival 1400ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes saola-arrival {
+  from { transform: translate3d(18px, 8px, 0) rotate(2deg); }
+  to { transform: translate3d(0, 0, 0) rotate(0); }
+}
+@keyframes saola-hero-arrival {
+  from { opacity: 0.3; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (min-width: 1440px) {
+  .saola-companion:not([hidden]) {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .about-saola {
+    width: 135px;
+    right: -18px;
+    bottom: 28px;
+  }
+  .closing-saola {
+    width: 128px;
+    right: -12px;
+    bottom: 16px;
+    opacity: 0.055;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .saola-arrived,
+  .ecosystem-core-branded .logo-artwork {
+    animation: none;
+  }
+  .saola-guide,
+  .saola-guide .saola-mark,
+  .saola-guide:hover .saola-mark,
+  .saola-guide:focus-visible .saola-mark {
+    transform: none;
+    transition: none;
+  }
+  .saola-trail {
+    display: none;
+  }
+}
+@media print {
+  .saola-companion,
+  .saola-watermark {
+    display: none !important;
+  }
+}

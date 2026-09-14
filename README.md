@@ -73,6 +73,8 @@ Service disclosures use native `details`. The mobile navigation uses a modal `di
 
 CSS and IntersectionObserver provide restrained motion. Reduced-motion preferences disable decorative animations, transitions, and smooth scrolling. Content stays readable without IntersectionObserver. All dashboard, website, workflow, and AI visuals are concepts, not client projects or measured results.
 
+`SaolaPresence` frames the symbol from the supplied logo for subtle About and closing-section watermarks. On screens at least 1440px wide, a small saola follows reading progress in the outer gutter and provides a keyboard-accessible back-to-top button. Hero and watermark entrances run once. Reduced motion keeps the guide stationary and removes the decorative movement. If the source logo dimensions change, also update the crop in `src/styles/saola-presence.css`.
+
 ## Before public launch
 
 - Supply an official icon-only favicon if desired.

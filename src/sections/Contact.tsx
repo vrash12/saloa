@@ -11,6 +11,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { siteConfig } from "../config/site";
+import { SaolaMark } from "../components/SaolaPresence";
 import type { Solution } from "../data/company";
 export interface ContactPayload {
   name: string;
@@ -166,6 +167,7 @@ export function Contact({
   return (
     <>
       <section className="final-cta">
+        <div className="saola-watermark closing-saola" data-saola-reveal aria-hidden="true"><SaolaMark /></div>
         <div className="container">
           <div>
             <p className="eyebrow">

@@ -3,6 +3,7 @@ import { Navbar } from "./sections/Navbar";
 import { Hero } from "./sections/Hero";
 import { Services } from "./sections/Services";
 import { Portfolio } from "./sections/Portfolio";
+import { SaolaPresence } from "./components/SaolaPresence";
 import {
   AutomationFeature,
   SoftwareFeature,
@@ -86,6 +87,7 @@ export default function App() {
         <Contact selected={selected} onClear={() => setSelected(null)} />
       </main>
       <Footer />
+      <SaolaPresence />
     </>
   );
 }
