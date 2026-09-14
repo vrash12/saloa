@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Navbar } from "./sections/Navbar";
 import { Hero } from "./sections/Hero";
 import { Services } from "./sections/Services";
+import { Portfolio } from "./sections/Portfolio";
 import {
   AutomationFeature,
   SoftwareFeature,
@@ -75,6 +76,7 @@ export default function App() {
         <SoftwareFeature />
         <WebsiteFeature />
         <AIFeature />
+        <Portfolio />
         <Process />
         <WhySaola />
         <Solutions onSelect={selectSolution} />

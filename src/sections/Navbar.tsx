@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Brand, Button } from "../components/UI";
-const links = ["Home", "Services", "Solutions", "Process", "About", "Contact"];
+const links = ["Home", "Services", "Portfolio", "Solutions", "Process", "About", "Contact"];
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);

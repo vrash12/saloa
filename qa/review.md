@@ -23,4 +23,6 @@ Verified on the built Vite site in the browser, not just the development server.
 
 Email-draft update: checked required-field errors, correct recipient, complete inquiry fields, encoded ampersands/symbols/Unicode and line breaks, removal of stale drafts after input edits, and the 320px layout. Production build passes and the browser reports no console errors. No email was sent; opening a mail client and actual mailbox delivery were not tested.
 
+Portfolio update: all nine user-supplied projects are represented with original idea summaries, problems addressed, and source-supported features. No portfolio images are loaded. Category filters return 9 / 2 / 5 / 2 entries. Native details expand with Enter and Space, the mobile Portfolio link closes the navigation dialog, and checks at 320px, 1024px, and 1440px show no horizontal overflow. The optimized production build retains filter and expanded-detail styling. No new console errors appeared on the production preview. Evidence is recorded in `qa/portfolio-source-notes.md`.
+
 Production transfer sizes before transport overhead: approximately 88 kB gzip JavaScript, 14 kB gzip CSS, and a 25 kB variable font. No stock imagery, remote font requests, or heavy animation library is included.

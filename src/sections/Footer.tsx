@@ -23,7 +23,7 @@ export function Footer() {
           </div>
           <div className="footer-column">
             <h2>Company</h2>
-            {["About", "Process", "Solutions", "Contact"].map((link) => (
+            {["About", "Portfolio", "Process", "Solutions", "Contact"].map((link) => (
               <a key={link} href={`#${link.toLowerCase()}`}>
                 {link}
               </a>
