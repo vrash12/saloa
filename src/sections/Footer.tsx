@@ -66,22 +66,16 @@ export function Footer() {
           <span>
             © {new Date().getFullYear()} Saola Systems. All rights reserved.
           </span>
-          <div>
-            {siteConfig.privacyUrl ? (
-              <a href={siteConfig.privacyUrl}>Privacy Policy</a>
-            ) : (
-              <span title="Approved policy to be supplied before public launch">
-                Privacy Policy <small>(pending)</small>
-              </span>
-            )}
-            {siteConfig.termsUrl ? (
-              <a href={siteConfig.termsUrl}>Terms of Service</a>
-            ) : (
-              <span title="Approved terms to be supplied before public launch">
-                Terms of Service <small>(pending)</small>
-              </span>
-            )}
-          </div>
+          {(siteConfig.privacyUrl || siteConfig.termsUrl) && (
+            <div>
+              {siteConfig.privacyUrl && (
+                <a href={siteConfig.privacyUrl}>Privacy Policy</a>
+              )}
+              {siteConfig.termsUrl && (
+                <a href={siteConfig.termsUrl}>Terms of Service</a>
+              )}
+            </div>
+          )}
           <a href="#home">Back to top ↑</a>
         </div>
       </div>

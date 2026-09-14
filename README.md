@@ -28,7 +28,7 @@ Navigation, the hero system diagram, and footer share this artwork. CSS frames t
 
 ## Company details
 
-`src/config/site.ts` centralizes email, phone, verified social URLs, approved legal-document URLs, logo availability, favicon, and contact endpoint. Unprovided contact links are omitted, and legal documents are visibly marked pending. No clients, endorsements, business metrics, office addresses, or company history are invented.
+`src/config/site.ts` centralizes email, phone, verified social URLs, approved legal-document URLs, logo availability, favicon, and contact endpoint. Unprovided contact links and legal-document links are omitted. No clients, endorsements, business metrics, office addresses, or company history are invented.
 
 The canonical URL, Open Graph URL, sitemap, and Organization schema use the supplied `https://saolasystems.com/` domain. Any private Sites deployment is a review copy; publishing it does not configure or transfer the custom domain.
 
