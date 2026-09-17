@@ -5,7 +5,7 @@ export interface PortfolioProject {
   idea: string;
   problem: string;
   features: string[];
-  sourceUrl: string;
+  sourceUrl?: string;
 }
 
 export const projects: PortfolioProject[] = [
@@ -145,5 +145,24 @@ export const projects: PortfolioProject[] = [
       "Healthcare service workflows",
     ],
     sourceUrl: "https://vrmsuliva.online/projects/9",
+  },
+  {
+    id: "agriculture-information-system",
+    title: "Agriculture Information System",
+    category: "Operations & records",
+    idea: "A centralized platform connecting farmer records, GIS farm mapping, agricultural programs, and local government services. Authorized municipal personnel manage their municipality's records, while provincial users coordinate and monitor activities across their province.",
+    problem: "Agriculture offices working with separate spreadsheets, paper files, and disconnected systems can face repeated data entry, inconsistent farmer information, limited visibility into farm boundaries and assistance histories, slow report consolidation, and difficulty tracking machinery. A shared record-management platform supports coordinated planning, traceable service delivery, and controlled access to private farmer information.",
+    features: [
+      "Farmer profiles, classifications & assistance histories",
+      "Printable & digital registry cards with QR codes",
+      "GIS parcel mapping, boundary drawing, imports & approximate area calculations",
+      "Agriculture & fisheries assistance tracking for seeds, fertilizer, fingerlings, feeds & equipment",
+      "Animal-health records for vaccination, deworming, vitamins & treatment",
+      "Cooperative memberships & machinery assignments, availability & maintenance",
+      "Dashboards & reports covering program activity, mapping coverage, incomplete records & operational priorities",
+      "Access controls by role, province & municipality, audit trails & safeguards for simultaneous edits",
+      "Municipality-level weather forecasts, agricultural guidance & links to official PAGASA bulletins",
+      "QR-linked public parcel pages showing selected registry & mapping information while excluding sensitive internal records",
+    ],
   },
 ];

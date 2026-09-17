@@ -67,3 +67,13 @@ Documented: resident/household profiles, certificate requests, appointments, com
 Source: https://vrmsuliva.online/projects/9
 
 The public description is brief. Documented only: medical records, patient information, and healthcare service processes. Only three features are listed rather than inventing unsupported appointments, billing, prescriptions, access roles, or AI. The need is a general editorial inference. No clinical outcomes are claimed.
+
+### Agriculture Information System
+
+Added on 2026-09-17 from the project overview supplied directly by the user. No public project URL was supplied.
+
+Documented: centralized farmer profiles and classifications, assistance histories, printable/digital QR registry cards, GIS parcel boundaries and imports, approximate area calculations, agriculture and fisheries input releases, animal-health services, cooperative memberships, machinery assignments and maintenance, program and data-completeness dashboards, role/province/municipality access controls, audit trails, simultaneous-edit safeguards, municipality-level weather forecasts and agricultural guidance, links to official PAGASA bulletins, and public QR-linked parcel pages excluding sensitive internal records.
+
+Primary authenticated users are authorized government personnel: provincial and municipal agriculture offices and staff, municipal head agriculturists, the provincial veterinary office, and authorized administrators and decision-makers. Farmers, fisheries assistance recipients, cooperatives, and associations are beneficiaries and record subjects. The system owner and technical support team handle account governance, maintenance, security, and continuity. The portfolio summary does not imply farmer or cooperative login accounts.
+
+The supplied operational challenges support the problem summary. Administrative efficiency, better-informed planning, coordination, accountability, data protection, and accessible verification are intended benefits; no measured savings, service improvements, deployment scale, or outcome guarantees are claimed. Parcel areas remain explicitly approximate, and public verification exposes selected information only.

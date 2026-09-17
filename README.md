@@ -61,7 +61,7 @@ Implement validation, rate limiting, origin/CORS configuration when needed, spam
 
 ## Content and architecture
 
-The portfolio at `#portfolio` contains nine text-only project summaries adapted from the user-supplied [VRMS project archive](https://vrmsuliva.online/projects). Public titles describe the type of website or management system, without project or client brand names. Each entry explains the idea, the operational need it addresses, and documented features. Project source URLs are retained in `src/data/portfolio.ts`; evidence and exclusions are recorded in `qa/portfolio-source-notes.md`. Category filters and native expandable details work with keyboard navigation. No project galleries, client testimonials, deployment claims, or performance metrics are imported.
+The portfolio at `#portfolio` contains ten text-only project summaries: nine adapted from the user-supplied [VRMS project archive](https://vrmsuliva.online/projects), plus Agriculture Information System from the user's supplied project overview. Public titles describe the type of website or management system, without project or client brand names. Each entry explains the idea, the operational need it addresses, and documented features. Available project source URLs are retained in `src/data/portfolio.ts`; evidence and exclusions are recorded in `qa/portfolio-source-notes.md`. Category filters and native expandable details work with keyboard navigation. No project galleries, client testimonials, deployment claims, or performance metrics are imported.
 
 - `src/sections/`: navigation, hero, services, product concepts, company sections, contact, and footer.
 - `src/data/`: complete service capability lists, process, technology groups, and solution descriptions.
