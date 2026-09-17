@@ -6,8 +6,8 @@ export const siteConfig = {
   domain: "saolasystems.com",
   email: "info@saolasystems.com",
   phone: "", // CONTACT_PHONE
-  facebook: "", // FACEBOOK_URL
-  linkedin: "", // LINKEDIN_URL
+  facebook: "https://www.facebook.com/profile.php?id=61594363474487",
+  linkedin: "https://www.linkedin.com/company/143894401/",
   privacyUrl: "", // Link to approved Privacy Policy before public launch.
   termsUrl: "", // Link to approved Terms of Service before public launch.
   contactEndpoint: import.meta.env.VITE_CONTACT_ENDPOINT || "",
