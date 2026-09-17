@@ -7,7 +7,7 @@ export const process = [
   {
     title: "Plan",
     description:
-      "We define requirements, scope, architecture, priorities, and the roadmap.",
+      "We define requirements, security needs, scope, architecture, and the roadmap.",
   },
   {
     title: "Design",
@@ -17,17 +17,17 @@ export const process = [
   {
     title: "Build",
     description:
-      "We develop your solution using modern, maintainable technology.",
+      "We build maintainable software with access controls and data protection suited to your system.",
   },
   {
     title: "Test & launch",
     description:
-      "We validate the system, resolve issues, prepare production infrastructure, and deploy.",
+      "We test functionality and security controls, then configure CI/CD and release checks to suit your project.",
   },
   {
     title: "Support & improve",
     description:
-      "We monitor, maintain, and continuously improve your digital product.",
+      "We monitor, apply security updates, and improve your product through the agreed support plan.",
   },
 ];
 export const technologies = [
@@ -43,7 +43,7 @@ export const technologies = [
   { group: "Database", items: ["PostgreSQL", "MySQL", "SQLite", "Supabase"] },
   {
     group: "Cloud & DevOps",
-    items: ["Docker", "Google Cloud", "GitHub", "Linux"],
+    items: ["Docker", "Google Cloud", "GitHub", "Linux", "CI/CD"],
   },
   { group: "AI", items: ["OpenAI", "Claude", "Gemini"] },
   { group: "Design", items: ["Figma"] },

@@ -38,6 +38,8 @@ export const services: Service[] = [
       "Booking Systems",
       "GIS & Mapping Systems",
       "Internal Business Tools",
+      "Authentication & Role-based Access",
+      "Data Protection & Input Validation",
     ],
   },
   {
@@ -61,6 +63,7 @@ export const services: Service[] = [
       "Spreadsheet Replacement",
       "Scheduling",
       "Process Digitization",
+      "Workflow Permissions & Audit Trails",
     ],
   },
   {
@@ -68,7 +71,7 @@ export const services: Service[] = [
     number: "01",
     title: "Website & Digital Presence",
     description:
-      "Build fast, professional digital experiences that establish credibility and help your business connect with customers.",
+      "Build fast, responsive websites with SEO foundations that establish credibility and help your business connect with customers.",
     icon: PanelsTopLeft,
     className: "service-website",
     capabilities: [
@@ -85,6 +88,7 @@ export const services: Service[] = [
       "Domain Setup",
       "Business Email Setup",
       "Hosting Setup",
+      "HTTPS & Secure Configuration",
     ],
   },
   {
@@ -108,6 +112,7 @@ export const services: Service[] = [
       "LLM Integration",
       "Computer Vision",
       "Intelligent Data Processing",
+      "AI Data Access Controls",
     ],
   },
   {
@@ -130,6 +135,7 @@ export const services: Service[] = [
       "SMS Integration",
       "Legacy Systems",
       "API Development",
+      "API Authentication & Access Controls",
     ],
   },
   {
@@ -137,7 +143,7 @@ export const services: Service[] = [
     number: "06",
     title: "Cloud & Managed Support",
     description:
-      "Deploy, maintain, monitor, and continuously improve your systems so your organization can focus on its operations.",
+      "Deploy and maintain your systems with monitoring, security updates, and CI/CD pipelines configured around your project and hosting needs.",
     icon: Cloud,
     className: "service-cloud",
     capabilities: [
@@ -152,6 +158,10 @@ export const services: Service[] = [
       "Security Updates",
       "Technical Support",
       "System Enhancements",
+      "CI/CD Pipelines",
+      "Automated Build & Test Checks",
+      "Staging & Release Approvals",
+      "Rollback Planning",
     ],
   },
 ];

@@ -7,6 +7,8 @@ import {
   Database,
   ArrowRight,
   ShieldCheck,
+  Search,
+  GitBranch,
 } from "lucide-react";
 import { SectionHeader } from "../components/UI";
 import { services } from "../data/services";
@@ -121,6 +123,35 @@ export function Services() {
               </details>
             </article>
           ))}
+        </div>
+        <div className="delivery-principles">
+          <article>
+            <ShieldCheck size={23} strokeWidth={1.5} aria-hidden="true" />
+            <h3>Security in every system.</h3>
+            <p>
+              We plan security into every solution, from websites to internal
+              systems. Access controls, data protection, and secure configuration
+              are tailored to the people, information, and risks involved.
+            </p>
+          </article>
+          <article>
+            <Search size={23} strokeWidth={1.5} aria-hidden="true" />
+            <h3>Responsive. Search-ready.</h3>
+            <p>
+              Websites are designed for mobile, tablet, and desktop, with
+              technical SEO foundations: clear page structure, metadata,
+              sitemaps, and performance-conscious development.
+            </p>
+          </article>
+          <article>
+            <GitBranch size={23} strokeWidth={1.5} aria-hidden="true" />
+            <h3>CI/CD that fits your project.</h3>
+            <p>
+              We configure continuous integration and deployment around your
+              hosting, scope, and release needs—with automated build and test
+              checks, approval steps, and rollback planning as appropriate.
+            </p>
+          </article>
         </div>
         <div className="services-footnote">
           <span className="small-label">BUSINESS FIRST. ALWAYS.</span>

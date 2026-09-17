@@ -250,6 +250,10 @@ export function SoftwareFeature() {
               <Check />
               Ready to evolve with your business
             </li>
+            <li>
+              <Check />
+              Security and access controls suited to your system
+            </li>
           </ul>
           <a className="text-link" href="#service-software">
             Explore custom development
@@ -457,8 +461,9 @@ export function WebsiteFeature() {
             than simply exist.
           </h2>
           <p>
-            We create websites designed to build credibility, communicate
-            clearly, perform well, and help customers take action.
+            We create responsive websites with technical SEO foundations,
+            designed to build credibility, perform well across devices, and
+            help customers take action.
           </p>
           <div className="website-benefits">
             {[
