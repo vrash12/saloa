@@ -24,7 +24,7 @@ The supplied transparent logo is installed as `src/assets/saola-logo.png`. The o
 
 Navigation, the hero system diagram, and footer share this artwork. CSS frames the logo without stretching it and applies a white treatment on their dark forest backgrounds for contrast. Transparency is retained, with no backing panel. The source PNG's colors remain unchanged. Extra text under the footer logo has been removed.
 
-`siteConfig.logoUrl` centralizes the asset reference. If a new asset has different canvas dimensions or margins, update the `.logo-artwork` framing in `src/styles/readability.css`. If an official icon-only favicon is supplied, place it in `public/` and set `faviconUrl` to its root-relative path.
+`siteConfig.logoUrl` centralizes the asset reference. If a new asset has different canvas dimensions or margins, update the `.logo-artwork` framing in `src/styles/readability.css`. The supplied September 17 Saola symbol is installed as `public/favicon.ico` (16, 32, and 48px), `public/favicon-96x96.png`, and `public/apple-touch-icon.png` (180px). The source artwork is framed square and resized with its original colors and light background preserved for dark browser tabs. Static links in `index.html` load the icons before React; keep the ICO URL and cache version in sync with `siteConfig.faviconUrl` when replacing them.
 
 ## Company details
 
@@ -77,7 +77,6 @@ CSS and IntersectionObserver provide restrained motion. Reduced-motion preferenc
 
 ## Before public launch
 
-- Supply an official icon-only favicon if desired.
 - Add verified contact/social details and approved Privacy Policy and Terms URLs.
 - Implement and connect the contact endpoint, then verify actual delivery.
 - Configure `saolasystems.com` with the chosen host and HTTPS.

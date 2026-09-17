@@ -12,5 +12,5 @@ export const siteConfig = {
   termsUrl: "", // Link to approved Terms of Service before public launch.
   contactEndpoint: import.meta.env.VITE_CONTACT_ENDPOINT || "",
   logoUrl, // Official artwork; CSS omits the tagline and handles dark-surface contrast.
-  faviconUrl: "", // Optional official icon-only asset in public/.
+  faviconUrl: "/favicon.ico?v=20260917", // Supplied official symbol; keep in sync with index.html.
 };
