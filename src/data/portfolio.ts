@@ -1,3 +1,5 @@
+import { projectScreenshots } from "./portfolioScreenshots";
+
 export interface PortfolioProject {
   id: string;
   title: string;
@@ -6,12 +8,22 @@ export interface PortfolioProject {
   problem: string;
   features: string[];
   sourceUrl?: string;
+  screenshots: PortfolioScreenshot[];
+}
+
+export interface PortfolioScreenshot {
+  src: string;
+  thumbnail: string;
+  alt: string;
+  width: number;
+  height: number;
 }
 
 export const projects: PortfolioProject[] = [
   {
     id: "corporate-services-website",
-    title: "Corporate Services Website",
+    title: "CTS Pacific Telecommunications & Infrastructure Platform",
+    screenshots: projectScreenshots["cts-pacific"],
     category: "Business websites",
     idea: "A corporate website that brings telecommunications and infrastructure services, technical credentials, and project inquiries into a clear, responsive experience for prospective customers.",
     problem: "Technical service buyers need a clear way to understand a company's capabilities and provide the right information when requesting a project quote.",
@@ -26,7 +38,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "cemetery-management",
-    title: "Cemetery Management System",
+    title: "Garden of Peace",
+    screenshots: projectScreenshots["garden-of-peace"],
     category: "Operations & records",
     idea: "A cemetery management platform connecting burial records, plot reservations, maintenance, and visitor services with an interactive map for locating plots and planning a visit.",
     problem: "Cemetery teams need organized records and plot information, while visitors need a practical way to find a burial location and navigate to it.",
@@ -42,7 +55,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "adoption-case-management",
-    title: "Adoption Case Management System",
+    title: "AmoraCare – Child Adoption Guidance and Donation Management System",
+    screenshots: projectScreenshots.amoracare,
     category: "Operations & records",
     idea: "An adoption case and donation management platform that connects applications, sensitive documents, and review stages, with AI assistance that keeps matching decisions with human reviewers.",
     problem: "Adoption teams need to coordinate sensitive profiles, document requirements, reviews, and donations while keeping case access controlled and decisions accountable to human reviewers.",
@@ -58,7 +72,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "network-access-management",
-    title: "Network Access Management System",
+    title: "PermitNet: Role-Based Network Access and Bandwidth Management System",
+    screenshots: projectScreenshots.permitnet,
     category: "Connected systems",
     idea: "A network management system linking an administrative dashboard with a Linux network agent to control hotspot access, apply bandwidth policies, and monitor connected devices.",
     problem: "Shared networks need a manageable way to approve devices, set access permissions, and apply bandwidth rules while giving administrators visibility into network activity.",
@@ -74,7 +89,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "equipment-catalog-website",
-    title: "Equipment Catalog Website",
+    title: "Copacific Website",
+    screenshots: projectScreenshots.copacific,
     category: "Business websites",
     idea: "A commercial kitchen equipment website that connects product discovery with parts and service support, helping customers prepare useful equipment details before making an inquiry.",
     problem: "Equipment customers need to find product information and communicate model, serial, and service details clearly so a distributor can understand their parts or support request.",
@@ -90,7 +106,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "public-transport-management",
-    title: "Public Transport Management System",
+    title: "PGT Onboard",
+    screenshots: projectScreenshots["pgt-onboard"],
     category: "Connected systems",
     idea: "A connected public transport platform bringing live bus information, passenger visibility, digital fares, and daily fleet operations into linked commuter and staff experiences.",
     problem: "Commuters need reliable arrival and occupancy information, while transport staff need connected tools for ticketing, top-ups, schedules, and vehicle monitoring throughout daily operations.",
@@ -106,7 +123,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "healthcare-workflow-records",
-    title: "Healthcare Workflow & Records System",
+    title: "FabellaCare",
+    screenshots: projectScreenshots.fabellacare,
     category: "Operations & records",
     idea: "A healthcare workflow and medical records management system designed to support hospital or clinic operations, organize patient records, and provide trend forecasting tools.",
     problem: "Healthcare teams need a structured way to coordinate service workflows and maintain patient records so operational information can be handled consistently across their work.",
@@ -119,7 +137,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "barangay-management",
-    title: "Barangay Management System",
+    title: "Barangay SOMS – Service Operations and Records Management System",
+    screenshots: projectScreenshots["barangay-soms"],
     category: "Operations & records",
     idea: "A service operations and records platform that brings resident information, public service requests, staff processing, and administrative reporting into connected workflows for a barangay office.",
     problem: "Barangay offices need a searchable, traceable way to coordinate resident records, requests, appointments, complaints, and financial activity that may otherwise sit in separate files.",
@@ -135,7 +154,8 @@ export const projects: PortfolioProject[] = [
   },
   {
     id: "hospital-management",
-    title: "Hospital Management System",
+    title: "PatientCare",
+    screenshots: projectScreenshots.patientcare,
     category: "Operations & records",
     idea: "A patient-focused healthcare platform bringing medical records, patient information, and healthcare service processes together to support more organized handling of day-to-day care administration.",
     problem: "Healthcare services need a consistent way to organize patient details and medical records while keeping the administrative processes around those records connected and manageable.",
@@ -149,6 +169,7 @@ export const projects: PortfolioProject[] = [
   {
     id: "agriculture-information-system",
     title: "Agriculture Information System",
+    screenshots: projectScreenshots["agriculture-information-system"],
     category: "Operations & records",
     idea: "A centralized platform connecting farmer records, GIS farm mapping, agricultural programs, and local government services. Authorized municipal personnel manage their municipality's records, while provincial users coordinate and monitor activities across their province.",
     problem: "Agriculture offices working with separate spreadsheets, paper files, and disconnected systems can face repeated data entry, inconsistent farmer information, limited visibility into farm boundaries and assistance histories, slow report consolidation, and difficulty tracking machinery. A shared record-management platform supports coordinated planning, traceable service delivery, and controlled access to private farmer information.",

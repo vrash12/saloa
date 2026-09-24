@@ -220,7 +220,7 @@ export function Industries() {
 }
 export function Technology() {
   return (
-    <section className="section technology-section">
+    <section className="section technology-section" id="technology">
       <div className="container">
         <SectionHeader
           eyebrow="OUR TOOLKIT"
@@ -233,8 +233,8 @@ export function Technology() {
           }
         >
           <p>
-            We choose technology based on the needs of the product—not because a
-            framework is trendy.
+            Frameworks, languages, and platforms we use to build, connect, and
+            maintain your systems.
           </p>
         </SectionHeader>
         <div className="technology-grid">
@@ -243,7 +243,13 @@ export function Technology() {
               <h3>{group.group}</h3>
               <div>
                 {group.items.map((item) => (
-                  <span key={item}>{item}</span>
+                  <span
+                    key={item.name}
+                    className="technology-item"
+                  >
+                    {item.logo && <img src={item.logo} alt="" width={28} height={28} loading="lazy" decoding="async" />}
+                    <span>{item.name}</span>
+                  </span>
                 ))}
               </div>
             </div>

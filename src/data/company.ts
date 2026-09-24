@@ -30,26 +30,117 @@ export const process = [
       "We monitor, apply security updates, and improve your product through the agreed support plan.",
   },
 ];
-export const technologies = [
+export interface TechnologyItem {
+  name: string;
+  logo?: string;
+}
+
+export interface TechnologyGroup {
+  group: string;
+  items: TechnologyItem[];
+}
+
+const technologyLogo = (name: string) => `/logos/technology/${name}.svg`;
+
+export const technologies: TechnologyGroup[] = [
   {
-    group: "Frontend",
-    items: ["React", "TypeScript", "Next.js", "JavaScript"],
+    group: "Frontend frameworks",
+    items: [
+      { name: "React", logo: technologyLogo("react") },
+      { name: "TypeScript", logo: technologyLogo("typescript") },
+      { name: "Next.js", logo: technologyLogo("nextjs") },
+      { name: "Vite", logo: technologyLogo("vitejs") },
+      { name: "JavaScript", logo: technologyLogo("javascript") },
+      { name: "HTML5", logo: technologyLogo("html5") },
+      { name: "CSS3", logo: technologyLogo("css3") },
+      { name: "Tailwind CSS", logo: technologyLogo("tailwindcss") },
+      { name: "Vue.js", logo: technologyLogo("vuejs") },
+    ],
   },
   {
-    group: "Backend",
-    items: ["Python", "Django", "Flask", "PHP", "Laravel", "Node.js"],
+    group: "Backend frameworks",
+    items: [
+      { name: "Node.js", logo: technologyLogo("nodejs") },
+      { name: "Express", logo: technologyLogo("express") },
+      { name: "NestJS", logo: technologyLogo("nestjs") },
+      { name: "Python", logo: technologyLogo("python") },
+      { name: "Django", logo: technologyLogo("django") },
+      { name: "Flask", logo: technologyLogo("flask") },
+      { name: "PHP", logo: technologyLogo("php") },
+      { name: "Laravel", logo: technologyLogo("laravel") },
+      { name: "REST APIs" },
+      { name: "Zod", logo: technologyLogo("zod") },
+    ],
   },
-  { group: "Mobile", items: ["React Native"] },
-  { group: "Database", items: ["PostgreSQL", "MySQL", "SQLite", "Supabase"] },
   {
-    group: "Cloud & DevOps",
-    items: ["Docker", "Google Cloud", "GitHub", "Linux", "CI/CD"],
+    group: "Mobile",
+    items: [
+      { name: "React Native", logo: technologyLogo("react") },
+      { name: "QR & barcode flows" },
+    ],
   },
-  { group: "AI", items: ["OpenAI", "Claude", "Gemini"] },
-  { group: "Design", items: ["Figma"] },
   {
-    group: "Integration",
-    items: ["REST APIs", "Google APIs", "Maps", "Payment Gateways"],
+    group: "Data & storage",
+    items: [
+      { name: "PostgreSQL", logo: technologyLogo("postgresql") },
+      { name: "MySQL", logo: technologyLogo("mysql") },
+      { name: "SQLite", logo: technologyLogo("sqlite") },
+      { name: "Supabase", logo: technologyLogo("supabase") },
+      { name: "Drizzle ORM", logo: technologyLogo("drizzle") },
+      { name: "PostGIS" },
+    ],
+  },
+  {
+    group: "Cloud & delivery",
+    items: [
+      { name: "Docker", logo: technologyLogo("docker") },
+      { name: "Google Cloud", logo: technologyLogo("googlecloud") },
+      { name: "Vercel", logo: technologyLogo("vercel") },
+      { name: "GitHub", logo: technologyLogo("github") },
+      { name: "Linux", logo: technologyLogo("linux") },
+      { name: "CI/CD" },
+    ],
+  },
+  {
+    group: "AI & intelligence",
+    items: [
+      { name: "OpenAI", logo: technologyLogo("openai") },
+      { name: "Claude", logo: technologyLogo("claude") },
+      { name: "Gemini", logo: technologyLogo("googlegemini") },
+      { name: "Document intelligence" },
+      { name: "Knowledge retrieval" },
+    ],
+  },
+  {
+    group: "Design & quality",
+    items: [
+      { name: "Figma", logo: technologyLogo("figma") },
+      { name: "Playwright", logo: technologyLogo("playwright") },
+      { name: "Vitest", logo: technologyLogo("vitest") },
+      { name: "Chart.js", logo: technologyLogo("chartjs") },
+      { name: "Alpine.js", logo: technologyLogo("alpinejs") },
+    ],
+  },
+  {
+    group: "Maps & connected systems",
+    items: [
+      { name: "Google APIs" },
+      { name: "Google Maps" },
+      { name: "Leaflet", logo: technologyLogo("leaflet") },
+      { name: "MQTT", logo: technologyLogo("mqtt") },
+      { name: "Arduino", logo: technologyLogo("arduino") },
+      { name: "GIS & mapping" },
+    ],
+  },
+  {
+    group: "Business integrations",
+    items: [
+      { name: "Payment gateways" },
+      { name: "Email notifications" },
+      { name: "Resend", logo: technologyLogo("resend") },
+      { name: "OAuth & JWT" },
+      { name: "Exports & reporting" },
+    ],
   },
 ];
 export interface Solution {

@@ -1438,32 +1438,53 @@
 }
 .technology-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 36px 34px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 .technology-grid > div {
-  border-top: 1px solid #83b5a440;
-  padding-top: 20px;
+  min-width: 0;
+  padding: 20px 18px 18px;
+  border: 1px solid #83b5a440;
+  border-radius: 8px;
+  background: #ffffff08;
 }
 .technology-grid h3 {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 750;
   letter-spacing: 0;
   color: var(--teal-light);
-  margin-bottom: 15px;
+  margin: 0 0 16px;
 }
 .technology-grid > div > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 8px;
 }
-.technology-grid span {
-  font-size: 10px;
+.technology-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
   border: 1px solid #8bb4a52e;
-  padding: 5px 9px;
-  border-radius: 4px;
+  padding: 6px 9px;
+  border-radius: 5px;
   color: #d2e4dc;
   background: #ffffff06;
+}
+.technology-item img {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  border-radius: 4px;
+  background: #fff;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.technology-item span {
+  overflow-wrap: anywhere;
 }
 .about-section {
   background: #f7faf8;
@@ -2353,11 +2374,11 @@
     max-width: 100%;
   }
   .technology-grid {
-    gap: 28px 20px;
+    gap: 16px;
   }
-  .technology-grid span {
-    font-size: 9px;
-    padding: 4px 7px;
+  .technology-item {
+    font-size: 11px;
+    padding: 5px 7px;
   }
   .about-layout {
     gap: 45px;
@@ -2987,14 +3008,14 @@
   }
   .technology-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 29px 21px;
+    gap: 16px;
   }
   .technology-grid h3 {
     font-size: 12px;
     margin-bottom: 13px;
   }
-  .technology-grid span {
-    font-size: 10px;
+  .technology-item {
+    font-size: 11px;
     padding: 4px 7px;
   }
   .about-layout {
@@ -3336,10 +3357,10 @@
     width: 12px;
   }
   .technology-grid {
-    gap: 25px 14px;
+    gap: 14px;
   }
-  .technology-grid span {
-    font-size: 9px;
+  .technology-item {
+    font-size: 10px;
     padding: 4px 6px;
   }
   .about-manifesto {

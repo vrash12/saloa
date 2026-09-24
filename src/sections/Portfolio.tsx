@@ -57,12 +57,44 @@ export function Portfolio() {
                 <span className="portfolio-number" aria-hidden="true">
                   {String(projects.indexOf(project) + 1).padStart(2, "0")}
                 </span>
+                <span className="portfolio-preview" aria-hidden="true">
+                  <img
+                    src={project.screenshots[0].thumbnail}
+                    alt=""
+                    width={project.screenshots[0].width}
+                    height={project.screenshots[0].height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
                 <span className="portfolio-category">{project.category}</span>
                 <h3 className="portfolio-title" id={`portfolio-title-${project.id}`}>{project.title}</h3>
                 <span className="portfolio-idea"><span className="portfolio-idea-label">The idea / </span>{project.idea}</span>
                 <span className="portfolio-expand" aria-hidden="true"><Plus size={20} /></span>
               </summary>
               <div className="portfolio-details">
+                <div className="portfolio-gallery">
+                  <h4>Project screenshots</h4>
+                  <div className="portfolio-gallery-grid">
+                    {project.screenshots.map((screenshot) => (
+                      <figure key={screenshot.src} className={screenshot.height > screenshot.width ? "portfolio-screenshot-portrait" : undefined}>
+                        <a href={screenshot.src} target="_blank" rel="noopener noreferrer" aria-label={`Open ${screenshot.alt} (opens in a new tab)`}>
+                          <img
+                            src={screenshot.thumbnail}
+                            srcSet={`${screenshot.thumbnail} 640w, ${screenshot.src} ${screenshot.width}w`}
+                            sizes="(max-width: 767px) calc(100vw - 88px), 460px"
+                            alt={screenshot.alt}
+                            width={screenshot.width}
+                            height={screenshot.height}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </a>
+                        <figcaption>{screenshot.alt}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
                 <div className="portfolio-problem">
                   <h4>The problem it addresses</h4>
                   <p>{project.problem}</p>

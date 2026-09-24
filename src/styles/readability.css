@@ -94,11 +94,18 @@
 .workflow-controls .button {
   font-size: 12px;
 }
-.technology-grid h3,
-.technology-grid span,
 .industries-grid > div,
 .website-benefits > span {
   font-size: 12px;
+}
+.technology-grid h3,
+.technology-item {
+  font-size: 14px;
+}
+@media (max-width: 540px) {
+  .technology-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 .why-reasons h3 {
   font-size: 19px;
