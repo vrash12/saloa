@@ -6,6 +6,7 @@ export interface PortfolioProject {
   category: "Business websites" | "Operations & records" | "Connected systems";
   idea: string;
   problem: string;
+  metrics?: string[];
   features: string[];
   sourceUrl?: string;
   screenshots: PortfolioScreenshot[];
@@ -173,6 +174,10 @@ export const projects: PortfolioProject[] = [
     category: "Operations & records",
     idea: "A centralized platform connecting farmer records, GIS farm mapping, agricultural programs, and local government services. Authorized municipal personnel manage their municipality's records, while provincial users coordinate and monitor activities across their province.",
     problem: "Agriculture offices working with separate spreadsheets, paper files, and disconnected systems can face repeated data entry, inconsistent farmer information, limited visibility into farm boundaries and assistance histories, slow report consolidation, and difficulty tracking machinery. A shared record-management platform supports coordinated planning, traceable service delivery, and controlled access to private farmer information.",
+    metrics: [
+      "150+ farmer and land records supported",
+      "70+ permission-protected workflows",
+    ],
     features: [
       "Farmer profiles, classifications & assistance histories",
       "Printable & digital registry cards with QR codes",

@@ -95,6 +95,16 @@ export function Portfolio() {
                     ))}
                   </div>
                 </div>
+                {project.metrics && project.metrics.length > 0 && (
+                  <div className="portfolio-metrics">
+                    <h4>Scope metrics</h4>
+                    <ul>
+                      {project.metrics.map((metric) => (
+                        <li key={metric}>{metric}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 <div className="portfolio-problem">
                   <h4>The problem it addresses</h4>
                   <p>{project.problem}</p>
