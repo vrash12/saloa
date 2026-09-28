@@ -20,6 +20,17 @@ export function SaolaPresence() {
     const wideScreen = window.matchMedia("(min-width: 1440px)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
+    let lastY = window.scrollY;
+    let walkTimer = 0;
+
+    // While the page moves, the saola takes steps and leans the way it's heading.
+    const walk = (y: number) => {
+      if (reducedMotion.matches || y === lastY) return;
+      element.setAttribute("data-heading", y > lastY ? "down" : "up");
+      element.classList.add("is-walking");
+      window.clearTimeout(walkTimer);
+      walkTimer = window.setTimeout(() => element.classList.remove("is-walking"), 240);
+    };
 
     const update = () => {
       frame = 0;
@@ -27,6 +38,8 @@ export function SaolaPresence() {
       const heroEnd = document.getElementById("home")?.offsetHeight ?? 600;
       const visible = wideScreen.matches && window.scrollY > heroEnd;
       element.hidden = !visible;
+      walk(window.scrollY);
+      lastY = window.scrollY;
       if (!visible) return;
       const progress = Math.min(1, Math.max(0, window.scrollY / Math.max(1, scrollRange)));
       element.style.setProperty("--saola-progress", String(progress));
@@ -63,6 +76,7 @@ export function SaolaPresence() {
 
     return () => {
       window.cancelAnimationFrame(frame);
+      window.clearTimeout(walkTimer);
       resizeObserver?.disconnect();
       entranceObserver?.disconnect();
       window.removeEventListener("scroll", schedule);

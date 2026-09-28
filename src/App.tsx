@@ -22,8 +22,10 @@ import { Contact } from "./sections/Contact";
 import { Footer } from "./sections/Footer";
 import type { Solution } from "./data/company";
 import { siteConfig } from "./config/site";
+import { useSaolaMotion } from "./hooks/useSaolaMotion";
 export default function App() {
   const [selected, setSelected] = useState<Solution | null>(null);
+  useSaolaMotion();
   const selectSolution = (solution: Solution) => {
     setSelected(solution);
     document

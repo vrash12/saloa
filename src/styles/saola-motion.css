@@ -1,0 +1,481 @@
+/*
+ * Saola motion: forest mist, canopy light, horns, and signals moving through
+ * a connected system. Every effect is decorative. The global reduced-motion
+ * rule in global.css turns animations and transitions off, and the hooks that
+ * drive the interactive parts do not run for reduced motion.
+ */
+
+@property --canopy-x {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+@property --canopy-y {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+@property --trace-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* Hero arrival: the headline emerges from mist, line by line. */
+.hero-line {
+  display: block;
+  animation: mist-rise 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero-line:nth-child(2) {
+  animation-delay: 130ms;
+}
+.hero-line:nth-child(3) {
+  animation-delay: 260ms;
+}
+.hero-copy > .eyebrow,
+.hero-description,
+.hero-copy > .button-row,
+.hero-capabilities {
+  animation: ground-rise 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.hero-description {
+  animation-delay: 520ms;
+}
+.hero-copy > .button-row {
+  animation-delay: 640ms;
+}
+.hero-capabilities {
+  animation-delay: 760ms;
+}
+
+/* Two parallel strokes, like a saola's horns, under "your business." */
+.horn-underline {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.horn-mark {
+  position: absolute;
+  left: 0;
+  bottom: -0.2em;
+  width: 100%;
+  height: 0.3em;
+  overflow: visible;
+  pointer-events: none;
+}
+.horn-mark path {
+  fill: none;
+  stroke: var(--teal);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  animation: horn-draw 1000ms cubic-bezier(0.6, 0, 0.2, 1) 900ms both;
+}
+.horn-mark path + path {
+  stroke: #5b9f8c;
+  stroke-width: 1.4;
+  animation-delay: 1060ms;
+}
+
+/* The diagram assembles itself: map fades in, connections draw out from the saola. */
+.ecosystem {
+  animation: map-arrive 1200ms cubic-bezier(0.2, 0.8, 0.2, 1) 180ms both;
+}
+.connections path {
+  stroke-dasharray: 1;
+  animation: horn-draw 1300ms cubic-bezier(0.6, 0, 0.2, 1) 450ms both;
+}
+.connection-pulses {
+  animation:
+    data-flow 9s linear infinite,
+    pulses-in 800ms ease 1500ms both;
+}
+.orbit:not(.orbit-inner) {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orbit-turn 120s linear infinite;
+}
+
+/* Depth: the map leans toward the mouse, each system at its own distance. */
+.ecosystem.has-depth {
+  transform: perspective(1200px) rotateX(calc(var(--tilt-y, 0) * -3deg))
+    rotateY(calc(var(--tilt-x, 0) * 4deg));
+}
+.has-depth .ecosystem-node {
+  translate: calc(var(--tilt-x, 0) * var(--depth, 1) * 10px)
+    calc(var(--tilt-y, 0) * var(--depth, 1) * 8px);
+}
+.has-depth .ecosystem-core {
+  translate: calc(var(--tilt-x, 0) * -4px) calc(var(--tilt-y, 0) * -3px);
+}
+
+/* Hovering a system lights its path to the saola. */
+.ecosystem-node {
+  transition:
+    opacity 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+.ecosystem-node:after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid #5eead4;
+  border-radius: inherit;
+  box-shadow: 0 0 24px #2dd4bf40;
+  opacity: 0;
+  pointer-events: none;
+}
+.ecosystem.has-focus .ecosystem-node:not(.is-lit) {
+  opacity: 0.5;
+}
+.ecosystem-node.is-lit {
+  border-color: #5eead488;
+  box-shadow:
+    0 8px 24px #00110a22,
+    0 0 0 4px #2dd4bf12,
+    0 0 30px #2dd4bf30;
+}
+.ecosystem-node.is-lit .node-port {
+  background: #5eead4;
+  box-shadow: 0 0 8px #5eead4;
+}
+.connection-traces path {
+  stroke: #5eead4;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition:
+    stroke-dashoffset 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 300ms ease;
+}
+.connection-traces path.is-lit {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
+
+/* Broadcast: a ripple leaves the saola and a signal runs out to every system. */
+.core-ripples circle {
+  fill: none;
+  stroke: #2dd4bf;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.is-broadcasting .core-ripples circle {
+  animation: core-ripple 1800ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.is-broadcasting .core-ripples circle + circle {
+  animation-delay: 260ms;
+}
+.is-broadcasting .connection-traces path {
+  animation: signal-run 1100ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation-delay: calc(var(--wave, 0) * 80ms);
+}
+.is-broadcasting .ecosystem-node:after {
+  animation: node-receive 1000ms ease-out both;
+  animation-delay: calc(var(--wave, 0) * 80ms + 520ms);
+}
+.ecosystem-core:before {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, #2dd4bf2e, transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+.is-broadcasting .ecosystem-core:before {
+  animation: core-glow 1600ms ease-out both;
+}
+
+/* Canopy light: the pointer lets light through and reveals the hidden grid. */
+.canopy-light {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 700ms ease,
+    --canopy-x 500ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    --canopy-y 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: radial-gradient(
+    460px circle at var(--canopy-x) var(--canopy-y),
+    #2dd4bf12,
+    transparent 70%
+  );
+}
+.canopy-light:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, #5eead42e 1px, transparent 1px),
+    linear-gradient(#5eead42e 1px, transparent 1px);
+  background-size: 74px 74px;
+  -webkit-mask-image: radial-gradient(
+    240px circle at var(--canopy-x) var(--canopy-y),
+    #000,
+    transparent
+  );
+  mask-image: radial-gradient(
+    240px circle at var(--canopy-x) var(--canopy-y),
+    #000,
+    transparent
+  );
+}
+.canopy-on > .canopy-light {
+  opacity: 1;
+}
+
+/* Section headings clear out of the mist as they arrive. */
+main h2.mist-clear {
+  animation: mist-rise 1000ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.is-visible .eyebrow > span {
+  animation: marker-turn 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both;
+}
+
+/* Capability strip: a signal passes along, lighting each capability in turn. */
+.capability-strip {
+  position: relative;
+  overflow: hidden;
+}
+.capability-strip:after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 22%;
+  background: linear-gradient(90deg, transparent, #14b8a61f, transparent);
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+.capability-strip.is-signalling:after {
+  animation: signal-sweep 1500ms cubic-bezier(0.5, 0, 0.3, 1) both;
+}
+.capability-strip.is-signalling span {
+  animation: signal-light 900ms ease both;
+  animation-delay: calc(var(--i, 0) * 170ms);
+}
+.capability-strip.is-signalling i {
+  animation: signal-turn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--i, 0) * 170ms);
+}
+
+/* A light traces the edge of primary buttons, like a signal on a circuit. */
+.button-primary {
+  position: relative;
+  isolation: isolate;
+}
+.button-primary:before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  padding: 1.5px;
+  border-radius: 8px;
+  background: conic-gradient(
+    from var(--trace-angle),
+    transparent 0 60%,
+    #2dd4bf 80%,
+    #ecfeff 90%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .button-primary:hover:before {
+    opacity: 1;
+    animation: trace-turn 1800ms linear infinite;
+  }
+}
+.button-primary:focus-visible:before {
+  opacity: 1;
+  animation: trace-turn 1800ms linear infinite;
+}
+
+/* The companion walks while the page moves, leaning the way it's heading. */
+.saola-companion {
+  --saola-lean: 6deg;
+}
+.saola-companion[data-heading="up"] {
+  --saola-lean: -7deg;
+}
+.saola-companion.is-walking .saola-guide .saola-mark {
+  animation: saola-gait 440ms ease-in-out infinite alternate;
+}
+
+@keyframes mist-rise {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(0.3em);
+  }
+  60% {
+    filter: blur(1px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@keyframes ground-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes horn-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes map-arrive {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes pulses-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes orbit-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes core-ripple {
+  from {
+    opacity: 0.75;
+    transform: scale(0.35);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.75);
+  }
+}
+@keyframes signal-run {
+  0% {
+    opacity: 1;
+    stroke-dasharray: 0.22 1.3;
+    stroke-dashoffset: 0.22;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-dasharray: 0.22 1.3;
+    stroke-dashoffset: -1;
+  }
+}
+@keyframes node-receive {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+@keyframes core-glow {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes marker-turn {
+  from {
+    transform: rotate(-135deg) scale(0);
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes signal-sweep {
+  to {
+    transform: translateX(560%);
+  }
+}
+@keyframes signal-light {
+  35% {
+    color: #0f766e;
+  }
+}
+@keyframes signal-turn {
+  from {
+    transform: rotate(0);
+    color: #9ba9a1;
+  }
+  50% {
+    color: var(--teal);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes trace-turn {
+  to {
+    --trace-angle: 360deg;
+  }
+}
+@keyframes saola-gait {
+  from {
+    transform: translateY(0) rotate(var(--saola-lean));
+  }
+  to {
+    transform: translateY(-2.5px) rotate(calc(var(--saola-lean) * 0.35));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ecosystem.has-depth,
+  .has-depth .ecosystem-node,
+  .has-depth .ecosystem-core {
+    transform: none;
+    translate: none;
+  }
+  .canopy-light {
+    display: none;
+  }
+}
+@media print {
+  .canopy-light,
+  .horn-mark {
+    display: none;
+  }
+}

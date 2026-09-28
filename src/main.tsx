@@ -4,6 +4,7 @@ import "./styles/fonts.css";
 import App from "./App";
 import "./styles/global.css";
 import "./styles/readability.css";
+import "./styles/saola-motion.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />

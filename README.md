@@ -77,6 +77,22 @@ CSS and IntersectionObserver provide restrained motion. Reduced-motion preferenc
 
 `SaolaPresence` frames the symbol from the supplied logo for subtle About and closing-section watermarks. On screens at least 1440px wide, a small saola follows reading progress in the outer gutter and provides a keyboard-accessible back-to-top button. Hero and watermark entrances run once. Reduced motion keeps the guide stationary and removes the decorative movement. If the source logo dimensions change, also update the crop in `src/styles/saola-presence.css`.
 
+### Motion
+
+The motion is drawn from the saola itself — a rare, elusive forest animal with long parallel horns — and from the connected-systems idea in the hero. Styles live in `src/styles/saola-motion.css`; behaviour lives in `src/hooks/useSaolaMotion.ts` (page-wide) and `src/hooks/useEcosystemMotion.ts` (hero diagram).
+
+- **Forest mist:** the hero headline and every section heading in `<main>` come into focus out of a soft blur as they arrive.
+- **Horns:** two parallel strokes, like a saola's horns, draw themselves under “your business.”
+- **The saola broadcasts:** the hero diagram draws its connections out from the saola at the centre. Shortly after load, whenever the pointer touches the saola, and every 12 seconds while the hero is on screen, a ripple leaves the saola and a signal runs down each connection to every system in turn.
+- **Lit paths:** hovering a system in the diagram lights the path between it and the saola and dims the others.
+- **Depth:** with a mouse, the diagram leans toward the pointer and each system floats at its own depth.
+- **Canopy light:** in the hero and the closing call to action, the pointer lets a soft light through and reveals a hidden grid beneath it.
+- **Signal strip:** when the capability strip comes into view (or is hovered), a signal passes along it and lights each capability in turn.
+- **Tracing buttons:** hovering or focusing a primary button sends a light around its edge.
+- **Walking companion:** the back-to-top saola takes steps while the page scrolls, leans the way it’s heading, and leaves split-hoof prints along its trail. The About and closing watermarks drift at their own depth.
+
+Pointer effects only run on mouse or trackpad devices. With `prefers-reduced-motion`, none of this runs and all content is shown in its final state. Classes toggled from script (`mist-clear`, `is-lit`, `is-broadcasting`, and so on) appear as string literals in the hooks so PurgeCSS keeps their rules. Keep it that way when adding new ones: for example, use `setAttribute("data-…")` rather than `dataset`.
+
 ## Before public launch
 
 - Add verified contact/social details and approved Privacy Policy and Terms URLs.

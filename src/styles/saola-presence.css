@@ -30,21 +30,30 @@
 .saola-companion[hidden] {
   display: none;
 }
+/* Split-hoof prints, alternating left and right, instead of a plain progress line. */
+.saola-trail,
+.saola-trail > span {
+  --print: #729f9040;
+  background-image:
+    radial-gradient(1.3px 2.3px at 2.2px 4px, var(--print) 85%, transparent),
+    radial-gradient(1.3px 2.3px at 5.2px 4px, var(--print) 85%, transparent),
+    radial-gradient(1.3px 2.3px at 6.8px 12px, var(--print) 85%, transparent),
+    radial-gradient(1.3px 2.3px at 9.8px 12px, var(--print) 85%, transparent);
+  background-size: 12px 16px;
+}
 .saola-trail {
   position: absolute;
   top: 28px;
-  left: 21px;
-  width: 2px;
+  left: 16px;
+  width: 12px;
   height: 144px;
-  background: #729f9026;
   overflow: hidden;
 }
 .saola-trail > span {
+  --print: #249985;
   display: block;
   height: 100%;
-  background: #249985;
-  transform-origin: top;
-  transform: scaleY(var(--saola-progress, 0));
+  clip-path: inset(0 0 calc((1 - var(--saola-progress, 0)) * 100%) 0);
 }
 .saola-guide {
   display: grid;

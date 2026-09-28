@@ -166,8 +166,9 @@ export function Contact({
   };
   return (
     <>
-      <section className="final-cta">
+      <section className="final-cta" data-canopy>
         <div className="saola-watermark closing-saola" data-saola-reveal aria-hidden="true"><SaolaMark /></div>
+        <div className="canopy-light" aria-hidden="true" />
         <div className="container">
           <div>
             <p className="eyebrow">
